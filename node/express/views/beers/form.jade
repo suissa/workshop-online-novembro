@@ -8,6 +8,10 @@ block content
   if acao == 'create'
     - var url = '/beers'
     - var cerveja = {}
+    - cerveja.name = ''
+    - cerveja.alcohol = ''
+    - cerveja.category = ''
+    - cerveja.description = ''
   else
     - var url = '/beers/'+cerveja._id
   form(action=url, method='POST')
@@ -17,7 +21,7 @@ block content
 
     label 
       span Teor Alcoólico
-      input(type='text', name='alcohol', value='#{cerveja.alcohol}')
+      input(type='text', name='alcohol', placeholder='Teor Alcoólico' value='#{cerveja.alcohol}')
     
     label 
       span Categoria
