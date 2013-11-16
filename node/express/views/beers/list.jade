@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+  h1 
+    | Minhas cervejas
+
+  h2= msg
+  
+  ul
+  for cerveja in cervejas
+    li #{cerveja.name} - #{cerveja.category} -  
+      a(href="/beers/update/#{cerveja._id}") Edit 
+      -
+      a(href="/beers/show/#{cerveja._id}") SHOW 
+      -
+      a(href="/beers/delete/#{cerveja._id}") DELETE 

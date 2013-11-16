@@ -1,0 +1,23 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+form label {
+  display: block;
+  margin: 20px;
+}
+
+form label span {
+  display: block;
+  width: 100%;
+}
+
+form input {
+  padding: 8px;
+  font-size: 14px;
+}
