@@ -5,7 +5,12 @@ block content
     | Minhas cervejas
   
   //- p= cerveja
-  form(action='/beers', method='POST')
+  if acao == 'create'
+    - var url = '/beers'
+    - var cerveja = {}
+  else
+    - var url = '/beers/'+cerveja._id
+  form(action=url, method='POST')
     label 
       span Nome
       input(type='text', name='name', placeholder='Nome', value='#{cerveja.name}')
@@ -23,8 +28,14 @@ block content
       textarea(name='description', placeholder='Descrição')
         | #{cerveja.description}
 
-    input(type='submit', value='Enviar')
-    input(type='hidden', name='_method', value='PUT')
+    if acao == 'update'
+      input(type='hidden', name='_method', value='PUT')
+      input(type='submit', value='ALETARAR')
+    if acao == 'delete'
+      input(type='hidden', name='_method', value='DELETE')
+      input(type='submit', value='DELETAR')
+    if acao == 'create'
+      input(type='submit', value='Enviar')
     
     
     

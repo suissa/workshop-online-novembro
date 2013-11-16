@@ -189,7 +189,7 @@ exports.list = module.exports.list = function(req, res){
 }
 
 exports.showCreate = module.exports.showCreate = function(req, res){
-  res.render('beers/form');
+  res.render('beers/form', {acao: 'create'});
 }
 
 exports.showUpdate = module.exports.showUpdate = function(req, res){
@@ -202,7 +202,7 @@ exports.showUpdate = module.exports.showUpdate = function(req, res){
       console.log(err);
       return err;
     } else {
-      res.render('beers/form_update', {cerveja: beers});
+      res.render('beers/form', {cerveja: beers, acao: 'update'});
     }
   });
 };
@@ -232,7 +232,7 @@ exports.showDelete = module.exports.showDelete = function(req, res){
       console.log(err);
       return err;
     } else {
-      res.render('beers/form_delete', {cerveja: beers});
+      res.render('beers/form', {cerveja: beers, acao: 'delete'});
     }
   });
 
